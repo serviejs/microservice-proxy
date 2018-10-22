@@ -1,0 +1,69 @@
+{
+  "name": "microservice-proxy",
+  "version": "0.0.0",
+  "description": "Simple proxy for your microservices based on servie and path-to-regexp",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "bin": "dist/bin.js",
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "build": "rm -rf dist/ && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serviejs/microservice-proxy.git"
+  },
+  "keywords": [
+    "microservice",
+    "service",
+    "proxy",
+    "http",
+    "micro",
+    "servie",
+    "http2"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/serviejs/microservice-proxy/issues"
+  },
+  "homepage": "https://github.com/serviejs/microservice-proxy",
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "src/.*\\.(?:test|spec)\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.12.0",
+    "jest": "^23.6.0",
+    "rimraf": "^2.5.4",
+    "ts-jest": "^23.1.4",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "arg": "^2.0.0",
+    "path-to-regexp": "^2.4.0",
+    "popsicle": "^11.0.0",
+    "servie": "^3.2.4",
+    "servie-http": "^1.1.1"
+  }
+}

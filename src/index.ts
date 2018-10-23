@@ -39,7 +39,7 @@ export class Service {
   }
 
   matches (req: Request) {
-    return this.isMethod(req.method) && this.isPath(req.url)
+    return this.isMethod(req.method) && this.isPath(req.Url.pathname || '/')
   }
 }
 

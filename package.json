@@ -62,7 +62,7 @@
   "dependencies": {
     "arg": "^2.0.0",
     "path-to-regexp": "^2.4.0",
-    "popsicle": "^11.0.0",
+    "popsicle": "^11.0.2",
     "servie": "^3.2.4",
     "servie-http": "^1.1.1"
   }

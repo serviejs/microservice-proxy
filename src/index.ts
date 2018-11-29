@@ -1,11 +1,6 @@
 import { Request, Response } from 'servie'
 import pathToRegexp = require('path-to-regexp')
-import { request, send as transport } from 'popsicle/dist/node'
-
-/**
- * Process request using basic node.js transport (no normalization).
- */
-const send = transport({})
+import { request, forward } from 'popsicle/dist/node'
 
 /**
  * Proxy configuration object.
@@ -48,6 +43,9 @@ export class Service {
  */
 export function proxy (configs: Config[]) {
   const services = configs.map(config => new Service(config))
+
+  // Forward HTTP requests raw without any pre-processing.
+  const send = forward({})
 
   return async (req: Request, next: () => Promise<Response>) => {
     for (const service of services) {

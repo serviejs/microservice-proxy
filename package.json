@@ -1,6 +1,6 @@
 {
   "name": "microservice-proxy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple proxy for your microservices based on servie and path-to-regexp",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

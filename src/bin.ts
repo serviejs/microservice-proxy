@@ -17,7 +17,7 @@ const args = require('arg')({
 const {
   '--config': config,
   '--port': port = 9000,
-  '--hostname': hostname = 'localhost'
+  '--hostname': hostname = '0.0.0.0'
 } = args
 
 if (!config) {

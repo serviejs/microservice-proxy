@@ -60,7 +60,7 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "arg": "^2.0.0",
+    "arg": "^3.0.0",
     "path-to-regexp": "^2.4.0",
     "popsicle": "^11.0.2",
     "servie": "^3.2.4",

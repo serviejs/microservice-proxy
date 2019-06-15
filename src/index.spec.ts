@@ -1,9 +1,9 @@
-import { proxy } from './index'
+import { proxy } from "./index";
 
-describe('microservice proxy', () => {
-  it('should create middleware', () => {
-    const m = proxy([])
+describe("microservice proxy", () => {
+  it("should create middleware", () => {
+    const m = proxy([]);
 
-    expect(typeof m).toBe('function')
-  })
-})
+    expect(typeof m).toBe("function");
+  });
+});

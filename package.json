@@ -9,10 +9,12 @@
   ],
   "bin": "dist/bin.js",
   "scripts": {
+    "prettier": "prettier --write",
+    "format": "npm run prettier -- \"{.,src/**}/*.{js,ts,json,md,yml,css}\"",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
-    "build": "rm -rf dist/ && tsc",
+    "build": "rimraf dist/ && tsc",
     "specs": "jest --coverage",
-    "test": "npm run -s lint && npm run -s build && npm run -s specs",
+    "test": "npm run lint && npm run build && npm run specs",
     "prepare": "npm run build"
   },
   "repository": {
@@ -39,31 +41,44 @@
   },
   "homepage": "https://github.com/serviejs/microservice-proxy",
   "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
     "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "src/.*\\.(?:test|spec)\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
+      "\\.tsx?$": "ts-jest"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md,yml,css}": [
+      "npm run prettier",
+      "git add"
     ]
   },
   "devDependencies": {
-    "@types/jest": "^23.3.2",
-    "@types/node": "^10.12.0",
-    "jest": "^23.6.0",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.2",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
     "rimraf": "^2.5.4",
-    "ts-jest": "^23.1.4",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "arg": "^3.0.0",
-    "path-to-regexp": "^2.4.0",
-    "popsicle": "^11.0.2",
-    "servie": "^3.2.4",
-    "servie-http": "^1.1.1"
+    "arg": "^4.1.0",
+    "path-to-regexp": "^3.0.0",
+    "popsicle-transport-http": "^1.0.2",
+    "servie": "^4.2.1",
+    "servie-http": "^2.0.1",
+    "servie-url": "^1.0.1"
   }
 }

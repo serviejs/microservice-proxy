@@ -41,17 +41,19 @@ microservice-proxy -c config.json -p 9000
 Or programmatically:
 
 ```js
-import { proxy } from 'microservice-proxy'
-import { createHandler } from 'servie-http'
-import { createServer } from 'http'
+import { proxy } from "microservice-proxy";
+import { createHandler } from "servie-http";
+import { createServer } from "http";
 
-const app = createHandler(proxy([
-  {
-    url: 'http://example.com'
-  }
-]))
+const app = createHandler(
+  proxy([
+    {
+      url: "http://example.com"
+    }
+  ])
+);
 
-createServer(app).listen(3000)
+createServer(app).listen(3000);
 ```
 
 ## Background

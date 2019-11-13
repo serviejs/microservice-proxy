@@ -10,7 +10,7 @@
   "bin": "dist/bin.js",
   "scripts": {
     "prettier": "prettier --write",
-    "format": "npm run prettier -- \"{.,src/**}/*.{js,ts,json,md,yml,css}\"",
+    "format": "npm run prettier -- \"{.,src/**}/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
     "build": "rimraf dist/ && tsc",
     "specs": "jest --coverage",
@@ -54,7 +54,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,json,md,yml,css}": [
+    "*.{js,jsx,ts,tsx,json,md,yml,yaml}": [
       "npm run prettier",
       "git add"
     ]
@@ -62,15 +62,15 @@
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.2",
-    "husky": "^2.4.1",
+    "husky": "^3.0.9",
     "jest": "^24.8.0",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.4.2",
     "prettier": "^1.18.2",
-    "rimraf": "^2.5.4",
+    "rimraf": "^3.0.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
+    "tslint-config-standard": "^9.0.0",
     "typescript": "^3.0.3"
   },
   "dependencies": {

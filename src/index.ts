@@ -1,6 +1,6 @@
 import { Request, Response } from "servie/dist/node";
 import { useRawBody } from "servie/dist/common";
-import pathToRegexp = require("path-to-regexp");
+import { pathToRegexp } from "path-to-regexp";
 import { getURL } from "servie-url";
 import { transport } from "popsicle-transport-http";
 
@@ -23,7 +23,7 @@ export class Service {
 
   constructor(config: Config) {
     this.re = config.path
-      ? pathToRegexp(config.path, [], { strict: true })
+      ? pathToRegexp(config.path, undefined, { strict: true })
       : undefined;
     this.methods = config.methods
       ? new Set(config.methods.map(x => x.toLowerCase()))

@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "arg": "^4.1.0",
-    "path-to-regexp": "^3.0.0",
+    "path-to-regexp": "^5.0.0",
     "popsicle-transport-http": "^1.0.2",
     "servie": "^4.2.1",
     "servie-http": "^2.0.1",
